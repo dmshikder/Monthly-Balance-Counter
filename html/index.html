@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assignment 5_ PH</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -19,31 +20,57 @@
       <div class="bg-slate-200 text-center py-10">
         <h2 class="font-bold">Income</h2>
         <br />
-        <h4>Income: <input type="text" name="" id="" class="ml-2 h-9" /></h4>
+        <h4>
+          Income:
+          <input type="text" name="" id="income-value" class="ml-2 h-9" />
+        </h4>
         <br />
         <h2 class="font-bold">Expenses</h2>
-        <h4>Food: <input type="text" name="" id="" class="ml-6 h-9" /></h4>
+        <h4>
+          Food: <input type="text" name="" id="food-value" class="ml-6 h-9" />
+        </h4>
         <br />
 
-        <h4>Rent: <input type="text" name="" id="" class="ml-6 h-9" /></h4>
+        <h4>
+          Rent: <input type="text" name="" id="rent-value" class="ml-6 h-9" />
+        </h4>
         <br />
 
-        <h4>Cloths: <input type="text" name="" id="" class="ml-2 h-9" /></h4>
+        <h4>
+          Cloths:
+          <input type="text" name="" id="cloths-value" class="ml-2 h-9" />
+        </h4>
 
         <br />
-        <button class="bg-red-500 py-2 px-4 rounded text-white">
+        <button
+          class="bg-red-500 py-2 px-4 rounded text-white"
+          id="calculate-btn"
+        >
           Calculate
         </button>
         <br />
-        <h2 class="font-bold">Total Expenses: <span>5500</span></h2>
-        <h2 class="font-bold">Balance: <span>4500</span></h2>
+        <h2 class="font-bold">
+          Total Expenses: <span id="total-expenses">5500</span>
+        </h2>
+        <h2 class="font-bold">Balance: <span id="balance">4500</span></h2>
         <br />
         Save:
-        <input type="text" name="" id="" class="h-9" /> %
-        <button class="bg-red-500 py-2 px-4 rounded text-white">Save</button>
+        <input type="text" name="" id="save-percentage" class="h-9" /> %
+        <button class="bg-red-500 py-2 px-4 rounded text-white" id="save-btn">
+          Save
+        </button>
         <br />
         <h2 class="font-bold">Saving Amount: <span>2000</span></h2>
-        <h2 class="font-bold">Remaininf Balance: <span>2500</span></h2>
+        <h2 class="font-bold">Remaining Balance: <span>2500</span></h2>
+      </div>
+
+      <div>
+        <h3>error 1: Please give number. You cann't enter string</h3>
+        <h3>
+          error 2: Please give positive number. You cann't enter negative number
+        </h3>
+        <h3>error 3: You haven't enough money to save</h3>
+        <h3>error 4: you have spend more than of your income</h3>
       </div>
     </section>
     <script src="/js/balance-counter.js"></script>

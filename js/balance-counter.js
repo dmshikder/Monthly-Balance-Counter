@@ -33,9 +33,17 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 
 })
 
+document.getElementById('save-btn').addEventListener('click', function(){
+    const incomeValue= document.getElementById('income-value');
+    const totalIncome= parseFloat(incomeValue.value);
+    const saveInput= document.getElementById('save-percentage');
+    const saveInputValue=parseFloat(saveInput.value); 
+    let totalSave= (totalIncome / 100) * saveInputValue;
+    const saving= document.getElementById('saving-amount');
+    const savingAmountText = saving.innerText;
+    saving.innerText = totalSave;
 
-
-
+})
 
 
 

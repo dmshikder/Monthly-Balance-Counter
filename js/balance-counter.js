@@ -11,13 +11,22 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     const incomeValue= document.getElementById('income-value');
     const totalIncome= parseFloat(incomeValue.value);
 
- 
+    const totalExpense= document.getElementById('total-expenses');
     
-    if (foodInput >= 0 && rentInput >= 0 && clothsInput >= 0 && totalIncome >= 0 ){
+
+
+
+
+    
+
+
+
+    
+     if (foodInput >= 0 && rentInput >= 0 && clothsInput >= 0 && totalIncome >= 0 ){
         
         // total expenses
 
-    let totalExpense= document.getElementById('total-expenses');
+    
     
     const totalExpensesText = totalExpense.innerText;
   
@@ -31,37 +40,29 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     const totalBalance= totalIncome - totalExpenses;
     balance.innerText= totalBalance;
     }
-    else {
-       console.log('wwjsdgjasdg')
+     
+    else{
+       document.getElementById('negative-error').style.display='block'
     }
-    
 
-/*  
-// total expenses
+    if(totalIncome < totalExpense.innerText){
+        document.getElementById('money-spend').style.display= 'block'
+        // document.getElementById('negative-error').style.display='none'
+        document.getElementById('money-save').style.display= 'none'
+    }
 
-    let totalExpense= document.getElementById('total-expenses');
-    
-    const totalExpensesText = totalExpense.innerText;
-  
-    let totalExpenses= foodInput + rentInput + clothsInput;
-    totalExpense.innerText = totalExpenses;
 
-    // balance 
 
-    const balance= document.getElementById('balance');
-    const balanceText= parseFloat(balance.innerText);
-    const totalBalance= totalIncome - totalExpenses;
-    balance.innerText= totalBalance;
-    
-
-*/
+   
     food.value = '';
     rent.value = '';
     cloths.value = '';
-    incomeValue.value = '';
+    // incomeValue.value = '';
 
 
 })
+
+
 
 // saving section
 
@@ -71,10 +72,23 @@ document.getElementById('save-btn').addEventListener('click', function(){
 
     const saveInput= document.getElementById('save-percentage');
     const saveInputValue=parseFloat(saveInput.value); 
-    let totalSave= (totalIncome / 100) * saveInputValue;
+    
     const saving= document.getElementById('saving-amount');
-    const savingAmountText = saving.innerText;
+    let totalSave= (totalIncome / 100) * saveInputValue;
+    
+
+    if(balance.innerText >totalSave){
+        const savingAmountText = saving.innerText;
     saving.innerText = totalSave;
+       
+    }
+    else {
+        document.getElementById('money-save').style.display= 'block'
+        document.getElementById('money-spend').style.display= 'none'
+    }
+
+
+
 
     // remaining balance
 

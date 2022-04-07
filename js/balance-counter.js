@@ -14,7 +14,6 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 
     const food= document.getElementById('food-value');
     const foodInput= parseFloat(food.value);
-   
     const rent= document.getElementById('rent-value');
     const rentInput= parseFloat(rent.value);
     const cloths= document.getElementById('cloths-value');

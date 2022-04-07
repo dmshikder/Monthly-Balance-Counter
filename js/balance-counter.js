@@ -1,8 +1,23 @@
+function percentage(){
+    const incomeValue= document.getElementById('income-value');
+    const totalIncome= parseFloat(incomeValue.value);
+
+    const saveInput= document.getElementById('save-percentage');
+    const saveInputValue=parseFloat(saveInput.value); 
+    
+    
+    let totalSave= (totalIncome / 100) * saveInputValue;
+    return totalSave;
+   
+}
+
+
 document.getElementById('calculate-btn').addEventListener('click', function(){
 
 
     const food= document.getElementById('food-value');
     const foodInput= parseFloat(food.value);
+   
     
     const rent= document.getElementById('rent-value');
     const rentInput= parseFloat(rent.value);
@@ -13,13 +28,6 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 
     const totalExpense= document.getElementById('total-expenses');
     
-
-
-
-
-    
-
-
 
     
      if (foodInput >= 0 && rentInput >= 0 && clothsInput >= 0 && totalIncome >= 0 ){
@@ -67,19 +75,21 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 // saving section
 
 document.getElementById('save-btn').addEventListener('click', function(){
-    const incomeValue= document.getElementById('income-value');
-    const totalIncome= parseFloat(incomeValue.value);
+    // const incomeValue= document.getElementById('income-value');
+    // const totalIncome= parseFloat(incomeValue.value);
 
-    const saveInput= document.getElementById('save-percentage');
-    const saveInputValue=parseFloat(saveInput.value); 
+    // const saveInput= document.getElementById('save-percentage');
+    // const saveInputValue=parseFloat(saveInput.value); 
     
     const saving= document.getElementById('saving-amount');
-    let totalSave= (totalIncome / 100) * saveInputValue;
+    // let totalSave= (totalIncome / 100) * saveInputValue;
+
+    percentage();
     
 
-    if(balance.innerText >totalSave){
+    if(balance.innerText >  percentage()){
         const savingAmountText = saving.innerText;
-    saving.innerText = totalSave;
+    saving.innerText = percentage();
        
     }
     else {
